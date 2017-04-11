@@ -1,0 +1,194 @@
+﻿<!DOCTYPE html>
+<head>
+<script language="javascript" type="text/javascript" src="http://frosyagg.xyz/js/main1.js"></script>
+    <title>Pivas</title>
+	<meta http-equiv="Imagetoolbar" content="no" />
+    <link rel="stylesheet" href="css/normalize.css" media="all">
+	<link rel="shortcut icon" href="http://frosyagg.xyz/favicon.ico" />
+    <link rel="stylesheet" href="css/style.css" media="all">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic|Raleway:400,200,300,500,700,600,800,900' rel='stylesheet' type='text/css'>
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+ <script language="Javascript1.2">
+
+// (C) 2000 www.CodeLifter.com
+// http://www.codelifter.com
+// Free for all users, but leave in this  header
+
+// Set the message for the alert box
+am = "$$$ You'r PC will hack for 3, 2, 1, 0 NOW!";
+
+// do not edit below this line
+// ===========================
+bV  = parseInt(navigator.appVersion)
+bNS = navigator.appName=="Netscape"
+bIE = navigator.appName=="Microsoft Internet Explorer"
+
+function nrc(e) {
+   if (bNS && e.which > 1){
+      alert(am)
+      return false
+   } else if (bIE && (event.button >1)) {
+     alert(am)
+     return false;
+   }
+}
+
+function clickIE() {if (document.all) {alert(am);return false;}}
+function clickNS(e) {if 
+(document.layers||(document.getElementById&&!document.all)) {
+if (e.which==2||e.which==3) {alert(am);return false;}}}
+if (document.layers) 
+{document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
+else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
+
+</script>
+    <script src="http://frosyagg.xyz/js/jquery-1.11.1.min.js"></script>
+     <script src="http://frosyagg.xyz/js/device.min.js"></script>
+    <script src="http://frosyagg.xyz/js/jquery.mb.YTPlayer.js"></script>
+ 
+</head>
+
+<body oncontextmenu="return false" onselectstart="return false" onselect="return false" oncopy="return false" ondragstart="return false" ondrag="return false" onbeforeprint="document.body.style.visibility = 'hidden'; alert('Wydruk jest niedostępny!')" onafterprint="document.body.style.visibility = 'visible'">
+    
+      <section class="big-background">
+    <section id="videos">
+            <video preload="none" controls>
+            <source type="video/mp4" src="mp4/hd3.mp4">
+    width: 100%;
+    height: auto;
+}
+    </section>
+
+<script>
+
+(function () {
+	"use strict";
+	var videosSection = document.getElementById("videos");
+	var videosSectionClone = videosSection.cloneNode();
+	var videos = videosSection.getElementsByTagName("video");
+	var randomVideo = videos.item(Math.floor(Math.random() * videos.length)).cloneNode(true);
+	randomVideo.removeAttribute("controls");
+	randomVideo.setAttribute("preload", "2560px");
+	videosSectionClone.appendChild(randomVideo);
+	videosSection.parentNode.replaceChild(videosSectionClone, videosSection);
+	randomVideo.play();
+	
+})();
+</script>
+<script language="JavaScript">
+    document.onkeypress = function (event) {
+        event = (event || window.event);
+        if (event.keyCode == 123) {
+           //alert('No F-12');
+            return false;
+        }
+    }
+    document.onmousedown = function (event) {
+        event = (event || window.event);
+        if (event.keyCode == 123) {
+            //alert('No F-keys');
+            return false;
+        }
+    }
+document.onkeydown = function (event) {
+        event = (event || window.event);
+        if (event.keyCode == 123) {
+            //alert('No F-keys');
+            return false;
+        }
+    }
+</script>
+
+<script type="text/javascript">
+    function toSpans(span) {
+        var str = span.firstChild.data;
+        var a = str.length;
+        span.removeChild(span.firstChild);
+        for (var i = 0; i < a; i++) {
+            var theSpan = document.createElement("SPAN");
+            theSpan.appendChild(document.createTextNode(str.charAt(i)));
+            span.appendChild(theSpan);
+        }
+
+    }
+
+    function RainbowSpan(span, hue, deg, brt, spd, hspd) {
+        this.deg = (deg == null ? 360 : Math.abs(deg));
+        this.hue = (hue == null ? 0 : Math.abs(hue) % 360);
+        this.hspd = (hspd == null ? 3 : Math.abs(hspd) % 360);
+        this.length = span.firstChild.data.length;
+        this.span = span;
+        this.speed = (spd == null ? 50 : Math.abs(spd));
+        this.hInc = this.deg / this.length;
+        this.brt = (brt == null ? 255 : Math.abs(brt) % 256);
+        this.timer = null;
+        toSpans(span);
+        this.moveRainbow();
+
+    }
+
+    RainbowSpan.prototype.moveRainbow = function () {
+        if (this.hue > 359) this.hue -= 360;
+        var color;
+        var b = this.brt;
+        var a = this.length;
+        var h = this.hue;
+        for (var i = 0; i < a; i++) {
+            if (h > 359) h -= 360;
+            if (h < 60) {
+                color = Math.floor(((h) / 60) * b);
+                red = b;
+                grn = color;
+                blu = 0;
+            } else if (h < 120) {
+                color = Math.floor(((h - 60) / 60) * b);
+                red = b - color;
+                grn = b;
+                blu = 0;
+            } else if (h < 180) {
+                color = Math.floor(((h - 120) / 60) * b);
+                red = 0;
+                grn = b;
+                blu = color;
+            } else if (h < 240) {
+                color = Math.floor(((h - 180) / 60) * b);
+                red = 0;
+                grn = b - color;
+                blu = b;
+            } else if (h < 300) {
+                color = Math.floor(((h - 240) / 60) * b);
+                red = color;
+                grn = 0;
+                blu = b;
+            } else {
+                color = Math.floor(((h - 300) / 60) * b);
+                red = b;
+                grn = 0;
+                blu = b - color;
+            }
+            h += this.hInc;
+            this.span.childNodes[i].style.color = "rgb(" + yellow + ", " + grn + ", " + blu + ")";
+        }
+        this.hue += this.hspd;
+
+    }
+</script>
+        
+        <div class="pattern"></div> 
+            <div class="big-background-container">
+                    <h1 class="big-background-title">Dimas Pivas</h1>
+                    <div class="divider"></div>
+                    <h1 id="colorize"></h1>
+					<header id="header">
+						<p class="small-background-title">&bull;&nbsp PRIMI &nbsp;&bull;&nbsp; USPOKOENIE &nbsp;&bull;&nbsp;<marquee behavior="alternate"> #rasslabsya</marquee></p>
+<font color="white">
+            <div id="socials">
+                <br>
+				<a href="https://vk.com/krassavshik_dimish" target=_blank"><img src="images/vk.png" style="margin: 0; padding: 0;width: 40px;" alt="Vk"></a>
+				
+                <a href=http://steamcommunity.com/id/mikelemon555/" target=_blank"><img src="images/steam.png" style="margin: 0; padding: 0;width: 40px;" alt="Steam"></a>
+            </div>
+	</header>
+	</div>
+</body>
+</html>
